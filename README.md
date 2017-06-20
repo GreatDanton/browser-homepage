@@ -78,7 +78,21 @@ link groups
 
 
 
-# Code structure
+# Development:
+The main goal of this project is to provide easy to use interface for sorting
+your links (replacement for current bookmark managers). It was not meant to be all
+around dashboard with integrations with various services. While such services
+might be implemented in the future, the current goal of this project is to
+fix the remaining bugs and clean ugly parts of the code first. The application
+was meant to be a really simple one with everything inlined, however the code
+got quickly out of hand.
+
+<!--The current way to develop this application is via homepage.html (if you are changing
+the structure of the html file). To prevent leaking of your private links, use python script `build_script.py` that will replace your links from homepage.html with generic ones from build/generic_links.txt
+-->
+
+
+## Code structure
 
 ```
 ├── build
@@ -110,18 +124,6 @@ when you are developing on homepage.html but you would like to prevent private l
 * `index.html` -> your links go here, see template comment inside
 * `main.scss` -> main scss file, (if you would like to change colors change them here) and compile it to main_min.css which is used by index.html
 
-
-# Development:
-The main goal of this project is to provide easy to use interface for sorting
-your links (replacement for current bookmark managers). It was not meant to be all
-around dashboard with integrations with various services. While such services
-might be implemented in the future, the current goal of this project is to
-fix the remaining bugs and clean ugly parts of the code first. The application
-was meant to be a really simple one with everything inlined, however the code
-got quickly out of hand.
-
-The current way to develop this application is via homepage.html (if you are changing
-the structure of the html file). To prevent leaking of your private links, use python script `build_script.py` that will replace your links from homepage.html with generic ones from build/generic_links.txt
 
 
 # TODO
