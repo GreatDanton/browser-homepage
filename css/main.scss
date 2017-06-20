@@ -69,25 +69,22 @@ body {
 
 .search-clear {
     position: absolute;
-    font-weight: 700;
-    text-align: center;
-    line-height: 17px;
     right: 8px;
     top: 11px;
+    cursor: pointer;
     width: 20px;
     height: 20px;
-    border: 2px solid $color-border;
-    color: $color-border;
-    border-radius: 50% 50%;
-    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     transition: $transition-fast;
-    user-select: none;
-    font-family: 'Lato', sans-serif;
+    font-weight: 400;
+    color: $color-border;
+    font-size: 18px;
 }
 
 .search-box:focus+.search-clear {
     color: $color-text;
-    border: 2px solid #fff;
 }
 
 input[type="text"] {

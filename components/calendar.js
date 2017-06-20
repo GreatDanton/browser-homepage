@@ -112,7 +112,6 @@ function create_other_rows(number_of_rows, starting_day, days_in_month) {
         // for each row do:
         row += '<div class="cal-week">';
         // add days in each week
-        var J = 0;
         for (j = starting_day; j < ending_day; j++) {
             if (j > days_in_month) {
                 d = j;
@@ -126,7 +125,6 @@ function create_other_rows(number_of_rows, starting_day, days_in_month) {
                 }
 
             }
-            J = j;
         }
         row += '</div>';
 
