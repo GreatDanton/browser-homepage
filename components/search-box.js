@@ -1,7 +1,9 @@
 // SEARCH BOX - contains code (logic) for search box on the front page
 
+var ENGINE = "ddg"; // google or ddg
 var search_box = document.getElementsByClassName('search-box')[0];
 var search_parent = search_box.parentNode;
+
 
 // TODO: when typing in search box, display relevant links from user saved links below
 // var links = document.querySelectorAll("a");
@@ -32,11 +34,19 @@ var queries = {
 };
 
 
+var searchEngines = {
+    "google": "https://www.google.com/search?&q=",
+    "ddg": "https://duckduckgo.com/?q=",
+};
+
+
 // check if there is any bang in query ==> direct search on desired website
 // else search with google
 function checkBangs(query) {
     var query_arr = query.split(' ');
     var bangPart = query_arr[0];
+
+    var search_engine = searchEngines[ENGINE];
 
     withoutSearch = ["!e", "!wa"]; // websites without search option
 
@@ -50,7 +60,7 @@ function checkBangs(query) {
         }
     } else {
         query = createQuery(query);
-        window.location = "https://www.google.com/search?&q=" + query;
+        window.location = search_engine + query;
     }
 }
 

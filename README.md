@@ -6,10 +6,22 @@ to the index.html (see Adding links for more informations)
 I had lots of unsorted links laying around and the current bookmarks extensions
 are just horrible mess, so I developed my own idea. Hopefully someone will find this project useful.
 
-Internet exploders 6,7,8,9,10,...99 are not supported.
+# Features
+
+* Search (on Google or DuckDuckGo)
+* Clock
+* Calendar
+* Countdown to custom date
+* Todos built in
+* Organizing links the way you want
 
 
 # Screenshots
+
+
+
+
+
 
 # Adding links
 Links should be added directly into `<div class="slides-container"` in index.html page. See below:
@@ -34,7 +46,7 @@ Links should be added directly into `<div class="slides-container"` in index.htm
 
 That's the output of above code, if I append it to my index.html
 
-![Above code output](addingLinks_img.png)
+![Above code output](screenshots/addingLinks_img.png)
 
 
 * Div with class slide is used for the name of the button (in line below the clock)
