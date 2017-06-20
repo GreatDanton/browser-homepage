@@ -137,7 +137,7 @@ the structure of the html file). To prevent leaking of your private links, use p
     - [ ] Deleting task does not work from time to time
 
 * Load links via JSON:
-    - [] The current way to develop this application is quite ugly (using python scripts to switch your private links with generic ones). If links are loaded from
+    - [ ] The current way to develop this application is quite ugly (using python scripts to switch your private links with generic ones). If links are loaded from
     json file, it would be easier to organize them and easier to develop this
     application.
 
