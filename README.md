@@ -18,7 +18,14 @@ are just horrible mess, so I developed my own idea. Hopefully someone will find 
 
 # Screenshots
 
+Main page
+![Main page](screenshots/mainPage.png)
 
+Integrated calendar
+![Calendar](screenshots/calendar.png)
+
+Integrated notes
+![Notes](screenshots/notes.png)
 
 
 
