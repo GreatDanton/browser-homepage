@@ -30,7 +30,7 @@ $calendar-today: #ddd;
 }
 
 body {
-    font-family: 'Lato';
+    font-family: 'Lato', sans-serif;
     color: $color-text;
     background-color: $color-background;
     height: 100vh;
@@ -69,9 +69,9 @@ body {
 
 .search-clear {
     position: absolute;
-    font-weight: 800;
+    font-weight: 700;
     text-align: center;
-    line-height: 18px;
+    line-height: 17px;
     right: 8px;
     top: 11px;
     width: 20px;
@@ -82,6 +82,7 @@ body {
     cursor: pointer;
     transition: $transition-fast;
     user-select: none;
+    font-family: 'Lato', sans-serif;
 }
 
 .search-box:focus+.search-clear {
@@ -450,13 +451,12 @@ a:focus {
     right: 0;
     width: 40px;
     height: 40px;
-    font-weight: 300;
+    font-weight: 400;
     text-align: center;
     line-height: 40px;
     font-size: 40px;
     cursor: pointer;
     color: $color-border;
-    ;
     user-select: none;
     -moz-user-select: none;
     transition: color 0.2s linear;
@@ -890,7 +890,7 @@ input[type=radio]:checked~label {
     text-align: center;
     color: $color-border;
     ;
-    font-weight: 300;
+    font-weight: 400;
     transition: $transition-fast;
     cursor: pointer;
     user-select: none;

@@ -6,6 +6,9 @@ to the index.html (see Adding links for more informations)
 I had lots of unsorted links laying around and the current bookmarks extensions
 are just horrible mess, so I developed my own idea. Hopefully someone will find this project useful.
 
+
+Live Example: [Browser Homepage](https://greatdanton.github.com/browser-homepage)
+
 # Features
 
 * Search (on Google or DuckDuckGo)
