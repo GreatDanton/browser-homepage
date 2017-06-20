@@ -1,6 +1,6 @@
 // SEARCH BOX - contains code (logic) for search box on the front page
 
-var ENGINE = "ddg"; // google or ddg
+var ENGINE = "google"; // google or ddg
 var search_box = document.getElementsByClassName('search-box')[0];
 var search_parent = search_box.parentNode;
 

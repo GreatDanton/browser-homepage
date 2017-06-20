@@ -41,7 +41,6 @@ Links should be added directly into `<div class="slides-container"` in index.htm
         </div>
     </div>
 </div>
-
 ```
 
 That's the output of above code, if I append it to my index.html
