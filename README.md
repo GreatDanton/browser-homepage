@@ -54,7 +54,6 @@ link groups
 
 
 
-
 # Tips for usage
 * Click on clock to display calendar and custom countdown
 * Search input supports bangs (`!command`). Supported bangs:
@@ -72,6 +71,10 @@ link groups
 # Code structure
 
 ```
+├── build
+│   ├── find_tag.py
+│   ├── generic_links.txt
+├── build_script.py
 ├── components
 │   ├── calendar.js
 │   ├── clock.js
@@ -82,11 +85,11 @@ link groups
 ├── css
 │   ├── main_min.css
 │   └── main.scss
-├── index.html
-├── prepros-6.config
-└── README.md
 ```
 
+* build folder: contains scripts and generic_links for developers
+* `build_script.py`: replace private links from homepage.html with generic links from `build/generic_links.txt`. Use it
+when you are developing on homepage.html but you would like to prevent private links from leaking.
 * Components folder: contains every part/component of the browser homepage.
     * `calendar.js` -> contains code for displaying calendar when the clock is clicked
     * `clock.js` -> displays clock & date on the front page
@@ -96,6 +99,19 @@ link groups
     * `slides.js` -> code for sliding links part to left or right
 * `index.html` -> your links go here, see template comment inside
 * `main.scss` -> main scss file, (if you would like to change colors change them here) and compile it to main_min.css which is used by index.html
+
+
+# Development:
+The main goal of this project is to provide easy to use interface for sorting
+your links (replacement for current bookmark managers). It was not meant to be all
+around dashboard with integrations with various services. While such services
+might be implemented in the future, the current goal of this project is to
+fix the remaining bugs and clean ugly parts of the code first. The application
+was meant to be a really simple one with everything inlined, however the code
+got quickly out of hand.
+
+The current way to develop this application is via homepage.html (if you are changing
+the structure of the html file). To prevent leaking of your private links, use python script `build_script.py` that will replace your links from homepage.html with generic ones from build/generic_links.txt
 
 
 # TODO
@@ -109,6 +125,14 @@ link groups
         + concatenate all js files into one
         + auto browser reloading
         + scss compilation
+
+* Notes:
+    - [ ] Deleting task does not work from time to time
+
+* Load links via JSON:
+    - [] The current way to develop this application is quite ugly (using python scripts to switch your private links with generic ones). If links are loaded from
+    json file, it would be easier to organize them and easier to develop this
+    application.
 
 # License
 See License file

@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""Python script for building index.html file. The preffered way to develop browser
+"""Python script for building index.html file. The preferred way to develop browser
 homepage is to develop on homepage.html and when you are happy with the changes
 execute build_script to replace your private links in homepage.html with generic
 ones from generic_links.txt
@@ -7,12 +7,12 @@ ones from generic_links.txt
 
 from build import find_tag
 
-# 1) open homepage.html
-# 2) create index.html with homepage.html but use links from generic_links
+def replace_links():
+    """builds index.html from your homepage.html replacing your own private links with
+    generic ones
+    """
 
 # open homepage.html and generic_links.txt
-
-def replaceLinks():
     with open("homepage.html", 'r') as html_file, open('build/generic_links.txt', 'r') as links_file:
         homepage = html_file.read()
         links = links_file.read()
@@ -43,4 +43,4 @@ def replaceLinks():
             print('Write complete')
 
 # execute
-replaceLinks()
+replace_links()
