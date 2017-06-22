@@ -87,18 +87,10 @@ fix the remaining bugs and clean ugly parts of the code first. The application
 was meant to be a really simple one with everything inlined, however the code
 got quickly out of hand.
 
-<!--The current way to develop this application is via homepage.html (if you are changing
-the structure of the html file). To prevent leaking of your private links, use python script `build_script.py` that will replace your links from homepage.html with generic ones from build/generic_links.txt
--->
-
 
 ## Code structure
 
 ```
-├── build
-│   ├── find_tag.py
-│   ├── generic_links.txt
-├── build_script.py
 ├── components
 │   ├── calendar.js
 │   ├── clock.js
@@ -111,9 +103,6 @@ the structure of the html file). To prevent leaking of your private links, use p
 │   └── main.scss
 ```
 
-* build folder: contains scripts and generic_links for developers
-* `build_script.py`: replace private links from homepage.html with generic links from `build/generic_links.txt`. Use it
-when you are developing on homepage.html but you would like to prevent private links from leaking.
 * Components folder: contains every part/component of the browser homepage.
     * `calendar.js` -> contains code for displaying calendar when the clock is clicked
     * `clock.js` -> displays clock & date on the front page
@@ -142,9 +131,8 @@ when you are developing on homepage.html but you would like to prevent private l
     - [ ] Deleting task does not work from time to time
 
 * Load links via JSON:
-    - [ ] The current way to develop this application is quite ugly (using python scripts to switch your private links with generic ones). If links are loaded from
-    json file, it would be easier to organize them and easier to develop this
-    application.
+    - [ ] Loading links via JSON file would simplify adding and managing
+    links/bookmarks, as well as the actual development process.
 
 # License
 See License file
