@@ -7,7 +7,7 @@ I had lots of unsorted links laying around and the current bookmarks extensions
 are just horrible mess, so I developed my own idea. Hopefully someone will find this project useful.
 
 
-## Live Example: [Browser Homepage](https://greatdanton.github.com/browser-homepage)
+# Live Example: [Browser Homepage](https://greatdanton.github.com/browser-homepage)
 
 # Features
 
@@ -112,7 +112,6 @@ got quickly out of hand.
     * `slides.js` -> code for sliding links part to left or right
 * `index.html` -> your links go here, see template comment inside
 * `main.scss` -> main scss file, (if you would like to change colors change them here) and compile it to main_min.css which is used by index.html
-
 
 
 # TODO

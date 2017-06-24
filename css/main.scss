@@ -18,6 +18,19 @@ $modal-box-shadow: 0 0 5px #333;
 $overlay-background: #000;
 // CALENDAR
 $calendar-today: #ddd;
+//
+// IMPORT FONTS //
+@font-face {
+    font-family: "Lato";
+    src: url('fonts/Lato-Regular.ttf');
+}
+
+@font-face {
+    font-family: "Lato";
+    src: url('fonts/Lato-Bold.ttf');
+    font-weight: 700;
+}
+
 
 /* CODE */
 
