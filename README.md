@@ -1,13 +1,13 @@
 # Browser homepage
 
-Custom browser homepage, for replacing default browser home page. It should work on any modern browser, just set `index.html` as your homepage and add your own links
+Custom browser homepage, for replacing default browser homepage/startpage. It should work on any modern browser, just set `index.html` as your homepage and add your own links
 to the index.html (see Adding links for more informations)
 
 I had lots of unsorted links laying around and the current bookmarks extensions
 are just horrible mess, so I developed my own idea. Hopefully someone will find this project useful.
 
 
-# Live Example: [Browser Homepage](https://greatdanton.github.com/browser-homepage)
+# [Live Example](https://greatdanton.github.com/browser-homepage)
 
 # Features
 
@@ -66,14 +66,21 @@ link groups
 
 # Tips for usage
 * Click on clock to display calendar and custom countdown
-* Search input supports bangs (`!command`). Supported bangs:
+* Search input supports bangs (`!command`). Currently supported bangs:
 
     | command  | arguments | search on |
     | -------- | --------- | -------   |
     | !y       | search    | youtube   |
     | !books   | search    | bookzz    |
-    | !wa      | /   | wolfram alpha |
-    | !ebay    | /         | ebay      |
+    | !wa      | /         | wolfram alpha |
+    | !e       | /         | ebay      |
+
+    Example usage
+
+        # try typing this in search bar
+        !y How google works    # searches on youtube for: How google works
+        !e                     # opens up ebay.com front page
+
 * Notes are automatically saved when close button (X) in top right corner is pressed. You can also save them manually via `save tasks` button
 
 
