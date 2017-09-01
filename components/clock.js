@@ -4,7 +4,7 @@
 var clock = document.getElementsByClassName('clock')[0];
 
 // show calendar on clock click
-clock.addEventListener('click', function(e) {
+clock.addEventListener('click', function (e) {
     var target = e.target;
     calendar.classList.add('visible');
     overlay.classList.add('visible');

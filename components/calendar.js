@@ -75,7 +75,7 @@ function generateCalendar(n) {
 
     // increase calendar year
     function increaseCalendarCounter() {
-        return function() {
+        return function () {
             global_calendar_counter++;
             //n++;
             generateCalendar(global_calendar_counter);
@@ -84,7 +84,7 @@ function generateCalendar(n) {
 
     // decreases calendar year
     function decreaseCalendarCounter() {
-        return function() {
+        return function () {
             global_calendar_counter--;
             //n--
             generateCalendar(global_calendar_counter);
@@ -175,12 +175,12 @@ var global_calendar_counter = 0;
 
 // calendar next, prev buttons
 // on click generate next or previous month
-cal_next.addEventListener('click', function() {
+cal_next.addEventListener('click', function () {
     global_calendar_counter++;
     generateCalendar(global_calendar_counter);
 });
 
-cal_prev.addEventListener('click', function() {
+cal_prev.addEventListener('click', function () {
     global_calendar_counter--;
     generateCalendar(global_calendar_counter);
 });
@@ -193,12 +193,22 @@ function hideCalendar() {
 
 // CLOSE CALENDAR
 // close calendar on overlay click
-overlay.addEventListener('click', function() {
+overlay.addEventListener('click', function () {
     hideCalendar();
 });
 
 // close calendar on X click
 var calendarClose = document.getElementById('close-calendar');
-calendarClose.addEventListener('click', function() {
+calendarClose.addEventListener('click', function () {
     hideCalendar();
+});
+
+
+// when escape is pressed and calendar is visible, close calendar and overlay
+document.addEventListener('keypress', function (e) {
+    if (e.key === "Escape") {
+        if (calendar.classList.contains('visible')) {
+            hideCalendar();
+        }
+    }
 });

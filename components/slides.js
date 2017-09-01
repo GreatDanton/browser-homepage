@@ -26,7 +26,7 @@ buttonsContainer.innerHTML = Html;
 
 
 // on button click, toggle active class, and slide to correct slide
-document.querySelector('.buttons-container').addEventListener('click', function(e) {
+document.querySelector('.buttons-container').addEventListener('click', function (e) {
     var target = e.target;
     // if clicked element is button (with class .slide-button), slide to correct
     // slide
@@ -60,8 +60,7 @@ function addActiveClassToButton() {
 
 // ### arrow clicks ###
 
-// right arrow click
-rightArrow.onclick = function() {
+function slideMoveRight() {
     var currentMargin = firstSlide.style.marginLeft;
     var translate;
     // on first screen
@@ -79,10 +78,14 @@ rightArrow.onclick = function() {
 
     // add active class to correct top button
     addActiveClassToButton();
+}
+
+// right arrow click
+rightArrow.onclick = function () {
+    slideMoveRight();
 };
 
-// left arrow click
-leftArrow.onclick = function() {
+function slideMoveLeft() {
     var currentMargin = firstSlide.style.marginLeft;
     var translate;
     // if you press left arrow on first slide => move to last slide
@@ -97,4 +100,24 @@ leftArrow.onclick = function() {
 
     // add active class to correct top button
     addActiveClassToButton();
+}
+
+// left arrow click
+leftArrow.onclick = function () {
+    slideMoveLeft();
 };
+
+
+// move slides left/right when search box is not in focus
+var search_box = document.getElementsByClassName('search')[0];
+document.addEventListener('keypress', function (e) {
+    // if search box is not focused
+    if (!search_box.classList.contains('search-active')) {
+        if (e.key === "ArrowRight") {
+            slideMoveRight();
+        }
+        else if (e.key === "ArrowLeft") {
+            slideMoveLeft();
+        }
+    }
+});

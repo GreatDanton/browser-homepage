@@ -68,7 +68,7 @@ var notes_modal = document.getElementsByClassName('notes-modal')[0];
 var notes_close_modal = document.getElementById('notes-close-modal');
 
 // show notes modal on notes button click
-notes_launcher.addEventListener('click', function() {
+notes_launcher.addEventListener('click', function () {
     notes_modal.classList.add('visible');
     // remove scrolling ability of body when notes-modal is opened
     document.body.classList.add('noscroll');
@@ -76,7 +76,7 @@ notes_launcher.addEventListener('click', function() {
     // focus input on modal open
     // using set timeout as a workaround, because you can't focus on element
     // if the modal is fading in/out (changing opacity, etc)
-    setTimeout(function() {
+    setTimeout(function () {
         todo_input.focus();
     }, 100);
 
@@ -85,20 +85,26 @@ notes_launcher.addEventListener('click', function() {
 });
 
 
-// click on close button, closes modal & Save tasks to local storage
-notes_close_modal.addEventListener('click', function() {
+// hide notes modal
+function hideNotes() {
     notes_modal.classList.remove('visible');
-    // add scrolling ability of body when notes-modal is closed
+    // add body scroll ability when notes-modal is closed
     document.body.classList.remove('noscroll');
-
     // on close button, clear localStorage and append all tasks in it (checked/unchecked)
     saveTasksToLocalStorage();
+}
+
+// click on close button, closes modal & Save tasks to local storage
+notes_close_modal.addEventListener('click', function () {
+    hideNotes();
 });
+
+
 
 
 // On save tasks btn click, save tasks to local storage
 var saveTasksBtn = document.getElementsByClassName('btn-save-tasks')[0];
-saveTasksBtn.addEventListener('click', function() {
+saveTasksBtn.addEventListener('click', function () {
     saveTasksToLocalStorage();
 });
 
@@ -110,7 +116,7 @@ var todo_add_button = document.getElementById('add-task-btn');
 var task_container = document.getElementsByClassName('notes-todo-list')[0];
 
 // add button clicked, append task to tasks container
-todo_add_button.addEventListener('click', function() {
+todo_add_button.addEventListener('click', function () {
     addTask();
 });
 
@@ -127,7 +133,7 @@ function createTask(id) {
     input.id = id;
     input.className = 'strikethrough';
     input.setAttribute('type', 'checkbox');
-    input.onclick = function() {
+    input.onclick = function () {
         // if empty => will become checked == done
         // if checked => will become unchecked == todo
         if (this.checked) {
@@ -158,12 +164,12 @@ function createTask(id) {
     row.appendChild(editBtn);
     row.appendChild(deleteBtn);
 
-    editBtn.onclick = function() {
+    editBtn.onclick = function () {
         showEditModal();
         taskEditClick(this.parentNode);
     };
 
-    deleteBtn.onclick = function() {
+    deleteBtn.onclick = function () {
         id = "row__" + input.id;
         // on delete remove task from task_all array
         for (i = 0; i < task_all.length; i++) {
@@ -227,7 +233,7 @@ function taskEditClick(parent_node) {
     edit_input.value = input_text;
 
     // on save button click, change label to desired value
-    save_btn.onclick = function() {
+    save_btn.onclick = function () {
         var new_name = edit_input.value;
         // check if new_name already exists
         var check = document.getElementById(new_name);
@@ -264,6 +270,7 @@ var todo_overlay = document.getElementById('todo-overlay');
 // helper function for showing edit modal and overlay
 
 
+// show task edit modal window
 function showEditModal() {
     todo_edit_modal.classList.add('visible');
     todo_overlay.classList.add('visible');
@@ -276,25 +283,25 @@ function hideEditModal() {
 }
 
 // hide modal on overlay click
-todo_overlay.addEventListener('click', function() {
+todo_overlay.addEventListener('click', function () {
     hideEditModal();
 });
 
 
 // on X click hide todo edit modal
-document.getElementById('todo-edit-modal-close').onclick = function() {
+document.getElementById('todo-edit-modal-close').onclick = function () {
     hideEditModal();
 };
 
 
 // cancel button clicked
-document.getElementById('todo-modal-cancel').onclick = function() {
+document.getElementById('todo-modal-cancel').onclick = function () {
     hideEditModal();
 };
 
 
 // if add task input is focused and enter is pressed, add task to tasks container
-todo_input.onkeypress = function(e) {
+todo_input.onkeypress = function (e) {
     if (!e) e = window.event;
     var keyCode = e.keyCode || e.which;
     if (keyCode == '13') {
@@ -338,7 +345,7 @@ function btnChangeActiveClass(element) {
 
 // FILTER TASKS
 // Display all tasks (done and todo)
-document.getElementById('task-filter-all').addEventListener('click', function() {
+document.getElementById('task-filter-all').addEventListener('click', function () {
     btnChangeActiveClass(this);
     getTasks();
     task_container.innerHTML = "";
@@ -349,7 +356,7 @@ document.getElementById('task-filter-all').addEventListener('click', function() 
 
 
 // Display only task not done yet (todo tasks)
-document.getElementById('task-filter-todo').addEventListener('click', function() {
+document.getElementById('task-filter-todo').addEventListener('click', function () {
     btnChangeActiveClass(this);
     getTasks();
     task_container.innerHTML = "";
@@ -359,7 +366,7 @@ document.getElementById('task-filter-todo').addEventListener('click', function()
 });
 
 // Display done tasks only
-document.getElementById('task-filter-done').addEventListener('click', function() {
+document.getElementById('task-filter-done').addEventListener('click', function () {
     btnChangeActiveClass(this);
     getTasks();
     task_container.innerHTML = "";
@@ -369,7 +376,7 @@ document.getElementById('task-filter-done').addEventListener('click', function()
 });
 
 // Clear done tasks
-document.getElementById('task-clear-done').addEventListener('click', function() {
+document.getElementById('task-clear-done').addEventListener('click', function () {
     getTasks();
     task_all = task_todo;
     task_done = [];
@@ -393,3 +400,18 @@ document.getElementById('task-clear-done').addEventListener('click', function() 
 // COUNTER
 todo_done = document.getElementById('todo-done');
 todo_items = document.getElementById('todo-items');
+
+
+// close notes modals if escape is pressed
+document.addEventListener('keypress', function (e) {
+    if (e.key === "Escape") {
+        // if task edit modal is opened => close it
+        if (todo_edit_modal.classList.contains('visible')) {
+            hideEditModal();
+        }
+        // if notes parent container is the only one opened => close it
+        else if (notes_modal.classList.contains('visible')) {
+            hideNotes();
+        }
+    }
+});
