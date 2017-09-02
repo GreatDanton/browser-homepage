@@ -109,10 +109,10 @@ leftArrow.onclick = function () {
 
 
 // move slides left/right when search box is not in focus
-var search_box = document.getElementsByClassName('search')[0];
+var search = document.getElementsByClassName('search')[0];
 document.addEventListener('keypress', function (e) {
     // if search box is not focused
-    if (!search_box.classList.contains('search-active')) {
+    if (!search.classList.contains('search-active')) {
         if (e.key === "ArrowRight") {
             slideMoveRight();
         }
