@@ -7,7 +7,7 @@ I had lots of unsorted links laying around and the current bookmarks extensions
 are just horrible mess, so I developed my own idea. Hopefully someone will find this project useful.
 
 
-# [Live Example](https://greatdanton.github.com/browser-homepage)
+# [Live Example](https://greatdanton.github.io/browser-homepage)
 
 # Features
 
